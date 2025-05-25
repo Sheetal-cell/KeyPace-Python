@@ -1,6 +1,7 @@
 import time
 import random
 from colorama import init, Fore, Style
+from datetime import datetime
 
 # Initialize colorama
 init(autoreset=True)
@@ -73,4 +74,13 @@ print(Fore.YELLOW + f"Average Typing Speed: {round(avg_wpm, 2)} WPM")
 print(Fore.YELLOW + f"Average Accuracy: {round(avg_accuracy, 2)}%")
 print(Fore.CYAN + "===============================")
 
-print(Fore.GREEN + "\nThanks for playing KeyPace! 🖥️⚡ Keep practicing and level up!\n")
+# Save to leaderboard
+name = input(Fore.GREEN + "\nEnter your name to save your score to the leaderboard: ")
+date_now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+with open("leaderboard.txt", "a") as file:
+    file.write(f"{name} | {date_now} | {round(avg_wpm,2)} WPM | {round(avg_accuracy,2)}% Accuracy\n")
+
+print(Fore.GREEN + "\nYour score has been saved to the leaderboard! 📃✨")
+
+print(Fore.CYAN + "\nThanks for playing KeyPace! 🖥️⚡ Keep practicing and level up!\n")
