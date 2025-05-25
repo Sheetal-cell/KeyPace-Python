@@ -1,11 +1,15 @@
 import time
 import random
+from colorama import init, Fore, Style
+
+# Initialize colorama
+init(autoreset=True)
 
 # Welcome message
-print("="*60)
-print("             WELCOME TO KEYPACE 🖥️⚡")
-print("        Type Fast. Type Smart. Beat your best!")
-print("="*60)
+print(Fore.CYAN + "="*60)
+print(Fore.MAGENTA + Style.BRIGHT + "             WELCOME TO KEYPACE 🖥️⚡")
+print(Fore.YELLOW + "        Type Fast. Type Smart. Beat your best!")
+print(Fore.CYAN + "="*60)
 time.sleep(1)
 
 # List of sentences
@@ -28,18 +32,18 @@ sentences = [
 ]
 
 # Ask how many sentences the user wants to type
-num_sentences = int(input("\nHow many sentences would you like to type? (1-15) "))
+num_sentences = int(input(Fore.GREEN + "\nHow many sentences would you like to type? "))
 
 total_wpm = 0
 total_accuracy = 0
 
 for i in range(num_sentences):
-    print(f"\nSentence {i+1} of {num_sentences}:")
+    print(Fore.CYAN + f"\nSentence {i+1} of {num_sentences}:")
     sentence = random.choice(sentences)
-    print(f"\nType the following:\n\"{sentence}\"")
+    print(Fore.YELLOW + f"\nType the following:\n\"{sentence}\"")
 
     start_time = time.time()
-    user_input = input("\nStart typing here: ")
+    user_input = input(Fore.WHITE + "\nStart typing here: ")
     end_time = time.time()
 
     time_taken = end_time - start_time
@@ -49,11 +53,11 @@ for i in range(num_sentences):
     correct_words = len(set(user_input.split()) & set(sentence.split()))
     accuracy = (correct_words / words) * 100
 
-    print("\n----- Result for this sentence -----")
-    print(f"Time Taken: {round(time_taken, 2)} seconds")
-    print(f"Typing Speed: {round(wpm, 2)} WPM")
-    print(f"Accuracy: {round(accuracy, 2)}%")
-    print("------------------------------------")
+    print(Fore.MAGENTA + "\n----- Result for this sentence -----")
+    print(Fore.GREEN + f"Time Taken: {round(time_taken, 2)} seconds")
+    print(Fore.GREEN + f"Typing Speed: {round(wpm, 2)} WPM")
+    print(Fore.GREEN + f"Accuracy: {round(accuracy, 2)}%")
+    print(Fore.MAGENTA + "------------------------------------")
 
     total_wpm += wpm
     total_accuracy += accuracy
@@ -62,11 +66,11 @@ for i in range(num_sentences):
 avg_wpm = total_wpm / num_sentences
 avg_accuracy = total_accuracy / num_sentences
 
-print("\n===============================")
-print("         FINAL RESULTS          ")
-print("===============================")
-print(f"Average Typing Speed: {round(avg_wpm, 2)} WPM")
-print(f"Average Accuracy: {round(avg_accuracy, 2)}%")
-print("===============================\n")
+print(Fore.CYAN + "\n===============================")
+print(Fore.MAGENTA + Style.BRIGHT + "         FINAL RESULTS          ")
+print(Fore.CYAN + "===============================")
+print(Fore.YELLOW + f"Average Typing Speed: {round(avg_wpm, 2)} WPM")
+print(Fore.YELLOW + f"Average Accuracy: {round(avg_accuracy, 2)}%")
+print(Fore.CYAN + "===============================")
 
-print("Thanks for playing KeyPace! 🖥️⚡ Keep practicing and level up!")
+print(Fore.GREEN + "\nThanks for playing KeyPace! 🖥️⚡ Keep practicing and level up!\n")
