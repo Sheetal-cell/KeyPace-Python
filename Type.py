@@ -95,10 +95,11 @@ def play_game():
 
     print(Fore.GREEN + "\nYour score has been saved to the leaderboard! 📃✨")
     print(Fore.CYAN + "\nThanks for playing KeyPace! 🖥️⚡ Keep practicing and level up!\n")
+    print(Fore.CYAN + "\n==========Made by Sheetal Bajaj  ==========")
 
 # ========== MAIN MENU ==========
 while True:
-    print(Fore.CYAN + "\n========== KEYPACE MENU ==========")
+    print(Fore.CYAN + "\n==========Welcome to KEYPACE  ==========")
     print(Fore.YELLOW + "1. Start Typing Test")
     print("2. View Leaderboard")
     print("3. Exit")
