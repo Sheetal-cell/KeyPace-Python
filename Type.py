@@ -47,7 +47,7 @@ def play_game():
         "Every moment is a fresh beginning, make it count."
     ]
 
-    num_sentences = int(input(Fore.GREEN + "\nHow many sentences would you like to type? "))
+    num_sentences = int(input(Fore.GREEN + "\nHow many sentences would you like to type(1-11)? "))
 
     total_wpm = 0
     total_accuracy = 0
